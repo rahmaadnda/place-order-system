@@ -1,4 +1,5 @@
 django
+djangorestframework
 gunicorn
 whitenoise
 psycopg2-binary
