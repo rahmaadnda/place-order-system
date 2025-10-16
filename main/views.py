@@ -73,8 +73,6 @@ class CartViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.Retriev
         return Response(OrderSerializer(order).data, status=status.HTTP_201_CREATED)
     
 
-class OrderViewSet(mixins.ListModelMixin,   
-                   mixins.RetrieveModelMixin,  
-                   viewsets.GenericViewSet):
+class OrderViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer

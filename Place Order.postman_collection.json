@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "bb606e8f-75b8-40ec-a4f4-d91a39fffdb1",
+		"name": "Place Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23440142"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/products/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/products/16/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"products",
+								"16",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Fluent Python\", \r\n    \"type\": \"Book\", \r\n    \"price\": 550000.00 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/main/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Clean Code: A Handbook of Agile Software Craftsmanship\",\r\n    \"type\": \"Book\",\r\n    \"price\": \"505000.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/main/products/5/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"products",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/products/15/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"products",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "get all carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/carts/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cart detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/carts/1/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"carts",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_name\": \"Scooby-Doo\",\r\n    \"customer_address\": \"Jl. Asia Afrika No. 101, Bandung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/main/carts/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add item to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": 3,\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/main/carts/2/add-item/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"carts",
+								"2",
+								"add-item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/carts/1/place-order/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"carts",
+								"1",
+								"place-order",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "get all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/orders/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/main/orders/2/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"main",
+								"orders",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		}
+	]
+}
